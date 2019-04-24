@@ -43,7 +43,7 @@ class RefreshScaffoldState extends State<RefreshScaffold>
     super.initState();
 //    LogUtil.e("RefreshScaffold initState......" + widget.labelId);
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      widget.controller.scrollController.addListener(() {
+     /* widget.controller.scrollController.addListener(() {
         int offset = widget.controller.scrollController.offset.toInt();
         if (offset < 480 && isShowFloatBtn) {
           isShowFloatBtn = false;
@@ -52,15 +52,15 @@ class RefreshScaffoldState extends State<RefreshScaffold>
           isShowFloatBtn = true;
           setState(() {});
         }
-      });
+      });*/
     });
   }
 
   Widget buildFloatingActionButton() {
-    if (widget.controller.scrollController == null ||
+    /*if (widget.controller.scrollController == null ||
         widget.controller.scrollController.offset < 480) {
       return null;
-    }
+    }*/
 
     return new FloatingActionButton(
         heroTag: widget.labelId,
@@ -70,8 +70,8 @@ class RefreshScaffoldState extends State<RefreshScaffold>
         ),
         onPressed: () {
           //_controller.scrollTo(0.0);
-          widget.controller.scrollController.animateTo(0.0,
-              duration: new Duration(milliseconds: 300), curve: Curves.linear);
+          /*widget.controller.scrollController.animateTo(0.0,
+              duration: new Duration(milliseconds: 300), curve: Curves.linear);*/
         });
   }
 
